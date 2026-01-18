@@ -5,121 +5,147 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>WTMA Practical Demoo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>WTMA Practical Demo</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style/css.css">
-    <img src="./mat/aadhi.png" id="floatingImage" alt="Floating Image"
-     style="position:absolute; width:100px; height:100px;">
-     <script src="./script/script.js"></script>
-     <style>
-    html, body {
-        height: 100%;
-        margin: 0;
-    }
 
-    body {
-        display: flex;
-        flex-direction: column;
-    }
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
 
-    footer {
-        margin-top: auto;
-    }
+        body {
+            display: flex;
+            flex-direction: column;
+            background-color: #f8f9fa;
+        }
 
-.text-red-bold-left {
-    color: red;
-    font-weight: 950;       /* extra bold */
-    text-align: center;       /* left-aligned */
-    font-size: 13px;        /* smaller */
-    margin-left: 15px;      /* slight indent */
-}
+        footer {
+            margin-top: auto;
+        }
 
-@media (max-width: 768px) {
-    .table-mobile-wrap th,
-    .table-mobile-wrap td {
-        white-space: normal;   /* allow text to wrap */
-        word-wrap: break-word; /* break long words */
-        font-size: 12px;       /* smaller font for mobile */
-        padding: 4px 6px;      /* less padding */
-    }
-}
-</style>
+        /* ================= WTMA HERO LOGO (REFERENCE STYLE) ================= */
+
+        .rotating-logo {
+            position: absolute;
+            left: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 460px;
+            height: 460px;
+            transition: transform 0.4s ease, filter 0.4s ease;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .rotating-logo:hover {
+            transform: translateY(-50%) scale(1.12);
+            filter: drop-shadow(0 0 20px rgba(255,255,255,0.9))
+                    drop-shadow(0 0 40px rgba(70,145,226,0.8));
+        }
+
+        /* Hide logo on mobile */
+        @media (max-width: 768px) {
+            .rotating-logo {
+                display: none;
+            }
+        }
+
+        /* ================= HERO SECTION ================= */
+
+        .hero-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
 </head>
 
 <body>
+
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#020202;">
     <div class="container">
         <a class="navbar-brand" href="#">WTMA - AI23431</a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="/WTMA-Lab/html/exp.html">Lab Programmes</a></li>
-				<li class="nav-item"><a class="nav-link" href="unit.html">Units</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Lab Programmes</a></li>
+                <li class="nav-item"><a class="nav-link" href="WTMA/unit.html">Units</a></li>
             </ul>
         </div>
     </div>
 </nav>
-	
-<!-- HERO SECTION -->
-<!--<section id="home" class="bg-primary text-white text-center p-5">-->
-<!-- HERO SECTION -->
-<section id="home" class="bg-primary text-white text-center p-5 position-relative">
-    <div class="container">
 
+<!-- HERO SECTION -->
+<section id="home" class="bg-primary text-white text-center p-5 hero-section">
+
+    <!-- WTMA LOGO (SAME AS REFERENCE PAGE) -->
+    <svg viewBox="0 0 300 300" class="rotating-logo">
+        <image href="WTMA/LOGONEW.png"
+               x="20"
+               y="80"
+               width="150"
+               height="150"/>
+    </svg>
+
+    <div class="container hero-content">
         <h1>Web Technology & Mobile Application</h1>
-        <p class="lead">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome to the WTMA Learning Hub !. Here every concept, example, and Lab Program is explained clearly for you.</p>
-    
-    
-		<div class="container mb-4 text-center">
-    <div class="d-flex justify-content-center gap-3">
-		<a href="html/syl.html" class="btn btn-light">WTMA Syllabus</a>
-        <a href="html/the.html" class="btn btn-light">WTMA Theory Schedule</a>
-        <a href="html/dep.html" class="btn btn-light">WTMA Lab Schedule</a>
-        <a href="html/ai-tools.html" class="btn btn-light">Explore AI Tools</a>
- </div>
-</div>
-		
+        <p class="lead">
+            Welcome to the WTMA Learning Hub!  
+           
+        </p>
+
+        <!-- BUTTONS -->
+        <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap mt-4">
+            <a href="html/syl.html" class="btn btn-light">WTMA Syllabus</a>
+            <a href="html/the.html" class="btn btn-light">WTMA Theory Schedule</a>
+            <a href="html/dep.html" class="btn btn-light">WTMA Lab Schedule</a>
+            <a href="html/ai-tools.html" class="btn btn-light">Explore AI Tools</a>
+        </div>
     </div>
 </section>
 
-
-<!-- EXPERIMENTS SECTION -->
+<!-- EXPERIMENTS -->
 <section id="experiments" class="p-5">
     <div class="container text-center">
-
         <h2 class="mb-4">Lab Experiments</h2>
-<br>
-        <a href="html/intro.html" class="week-card">
-            Day 1 - WTMA Introduction
+        <a href="html/intro.html" class="btn btn-outline-primary">
+            Day 1 – WTMA Introduction
         </a>
 
-        <!--
-        <a href="week1/week1.html" class="week-card">
-            WEEK 1
+        <a href="html/intro.html" class="btn btn-outline-primary">
+            Day 2 – WTMA Introduction
         </a>
-        -->
 
+        <a href="html/intro.html" class="btn btn-outline-primary">
+            Day 3 – WTMA Introduction
+        </a>
+
+        <a href="html/intro.html" class="btn btn-outline-primary">
+            Day 4 – WTMA Introduction
+        </a>
     </div>
 </section>
-
 
 <!-- FOOTER -->
 <footer class="bg-dark text-white text-center p-3">
     &copy; 2026 WTMA Lab | Department of AIDS
 </footer>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
-
-
-
